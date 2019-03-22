@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.4.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script
+      src="https://unpkg.com/react-transition-group@2.2.1/dist/react-transition-group.min.js"
+      charset="utf-8"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/7.1.0/reactstrap.full.min.js"
+      charset="utf-8"
+    ></script>
+    <title>Waffle 17기 지원서 : 김지훈</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" charset="utf-8">
+      const { Container, Col, Row, Button, Collapse, Jumbotron } = Reactstrap;
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { c1: false, c2: false, c3: false, c4: false };
+        }
+
+        btn1 = () => {
+          this.setState(state => ({
+            c1: !state.c1
+          }));
+        };
+        btn2 = () => {
+          this.setState(state => ({
+            c2: !state.c2
+          }));
+        };
+        btn3 = () => {
+          this.setState(state => ({
+            c3: !state.c3
+          }));
+        };
+        btn4 = () => {
+          this.setState(state => ({
+            c4: !state.c4
+          }));
+        };
+
+        render() {
+          return (
+            <Container
+              style={{
+                textAlign: "center"
+              }}
+            >
+              <Row>
+                <Col md="2" />
+                <Col md="8">
+                  <br />
+                  <br />
+                  <Row
+                    style={{
+                      marginBottom: "15px"
+                    }}
+                  >
+                    <Button
+                      style={{
+                        marginBottom: "5px"
+                      }}
+                      block
+                      size="lg"
+                      color="primary"
+                      onClick={this.btn1}
+                    >
+                      인적사항
+                    </Button>
+
+                    <Col md="12">
+                      <Collapse isOpen={this.state.c1}>
+                        <Button disabled outline color="primary" block>
+                          <img
+                            width="30%"
+                            src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/54413305_1994371284025935_116620873326133248_n.jpg?_nc_cat=110&_nc_ht=scontent-icn1-1.xx&oh=3eb1b41dd713b6e71a4618853530cb0d&oe=5D0B0224"
+                          />
+                          <h4>김지훈</h4>
+                          <h6>컴퓨터공학부 17학번</h6>
+                          <h6>010-6322-4312</h6>
+                          <h6>kzc123@snu.ac.kr</h6>
+                        </Button>
+                      </Collapse>
+                    </Col>
+                  </Row>
+                  <Row
+                    style={{
+                      marginBottom: "15px"
+                    }}
+                  >
+                    <Button
+                      style={{
+                        marginBottom: "5px"
+                      }}
+                      block
+                      size="lg"
+                      color="primary"
+                      onClick={this.btn2}
+                    >
+                      지원동기
+                    </Button>
+
+                    <Col md="12">
+                      <Collapse isOpen={this.state.c2}>
+                        <Button disabled outline color="primary" block>
+                          <h6>
+                            17년 2학기에 15기 Rookies로 잠시 활동했었습니다.
+                          </h6>
+                          <h6>
+                            개인적인 사정 때문에 활동이 어려워져서
+                            그만두었었는데
+                          </h6>
+                          <h6>
+                            다시 와플에서 활동하고 싶어 이렇게 지원하게
+                            되었습니다.
+                          </h6>
+                          <br />
+                          <h6>당시에 처음 와플을 지원했을 때와 마찬가지로</h6>
+                          <h6>
+                            학교 과제와 같이 상황과 답이 정해져있는 프로그래밍을
+                            하기보다는
+                          </h6>
+                          <h6>
+                            스스로 상황과 답을 찾아가는 자유로운 개발을 하고
+                            싶습니다.
+                          </h6>
+                        </Button>
+                      </Collapse>
+                    </Col>
+                  </Row>
+                  <Row
+                    style={{
+                      marginBottom: "15px"
+                    }}
+                  >
+                    <Button
+                      style={{
+                        marginBottom: "5px"
+                      }}
+                      block
+                      size="lg"
+                      color="primary"
+                      onClick={this.btn3}
+                    >
+                      개발경험
+                    </Button>
+
+                    <Col md="12">
+                      <Collapse isOpen={this.state.c3}>
+                        <Button disabled outline color="primary" block>
+                          <h6>
+                            자율주행 스타트업 Rideflux에서 2달간 인턴으로 일한
+                            경험이 있습니다.
+                          </h6>
+                          <h6>
+                            인턴 기간 동안 react와 redux를 이용한 웹 앱 프론트쪽
+                            개발과
+                          </h6>
+                          <h6>
+                            node js를 이용한 웹서버 개발을 주로 맡았었습니다.
+                          </h6>
+                          <br />
+                          <h6>
+                            이 외에도 개인적으로 Flash 플랫폼 기반의 Air for
+                            Android나,
+                          </h6>
+                          <h6>
+                            Unity등을 이용해 안드로이드 어플리케이션을 개발해본
+                            경험이 있고,
+                          </h6>
+                          <h6>
+                            컴퓨터공학부의 여러 프로그래밍 관련 전공과목들을
+                            준수한 성적으로 이수했습니다.
+                          </h6>
+                        </Button>
+                      </Collapse>
+                    </Col>
+                  </Row>
+                  <Row
+                    style={{
+                      marginBottom: "15px"
+                    }}
+                  >
+                    <Button
+                      style={{
+                        marginBottom: "5px"
+                      }}
+                      block
+                      size="lg"
+                      color="primary"
+                      onClick={this.btn4}
+                    >
+                      기타
+                    </Button>
+
+                    <Col md="12">
+                      <Collapse isOpen={this.state.c4}>
+                        <Button disabled outline color="primary" block>
+                          <img
+                            width="30%"
+                            src="http://crafter.co.kr/images/about/bg_about1_4.png"
+                          />
+
+                          <h6>중학교 3학년때부터 기타를 쳤습니다.</h6>
+                          <h6>
+                            현재 서울대학교 기타 중앙동아리 '기타둥둥'의
+                            정회원으로 소속되어 있으며
+                          </h6>
+                          <h6>좋아하는 기타리스트는 마사키 키시베입니다.</h6>
+                          <h6>
+                            최근에는 마사키 키시베의 HeartString과 JIN의 Sakura
+                            Wish를 연습 중에 있습니다.
+                          </h6>
+                          <h6>
+                            아직은 많이 부족한 실력이지만 열심히 연습해 더
+                            정진하도록 하겠습니다.
+                          </h6>
+                        </Button>
+                      </Collapse>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col md="2" />
+              </Row>
+            </Container>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
